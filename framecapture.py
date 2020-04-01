@@ -8,13 +8,15 @@ import shutil
 def turn_to_gif(video_path):
     video_file = VideoFileClip(video_path)
     print(video_file.duration)
-    done = False
     start = 0
     end = start + 0.5
     counter = 1
     while end <  video_file.duration:
         clip = video_file.subclip(start,end)
-        clip.write_gif(f'output_videos/test{counter}.gif')
+        if counter < 10:
+            clip.write_gif(f'output_videos/test0{counter}.gif')
+        else:
+            clip.write_gif(f'output_videos/test{counter}.gif')
 
         counter +=1
         start += 0.5
