@@ -147,3 +147,7 @@ static
 
 /input_videos
 /output_videos
+
+*.mp4
+
+*.gif
